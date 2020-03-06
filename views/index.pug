@@ -1,0 +1,180 @@
+doctype html
+
+title Andrew Gray's Magical Land of Code
+meta(charset='UTF-8')
+meta(name='viewport', content='width=device-width, initial-scale=1')
+link(rel='stylesheet', href='https://www.w3schools.com/w3css/4/w3.css')
+link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Lato')
+link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+style.
+  body {font-family: "Lato", sans-serif}
+  .mySlides {display: none}
+// Navbar
+.w3-top
+  .w3-bar.w3-black.w3-card
+    a.w3-bar-item.w3-button.w3-padding-large.w3-hide-medium.w3-hide-large.w3-right(href='javascript:void(0)', onclick='myFunction()', title='Toggle Navigation Menu')
+      i.fa.fa-bars
+    a.w3-bar-item.w3-button.w3-padding-large(href='#') HOME
+    a.w3-bar-item.w3-button.w3-padding-large.w3-hide-small(href='#about') ABOUT
+    a.w3-bar-item.w3-button.w3-padding-large.w3-hide-small(href='#projects') PROJECTS
+    a.w3-bar-item.w3-button.w3-padding-large.w3-hide-small(href='#contact') CONTACT
+
+// Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links)
+#navDemo.w3-bar-block.w3-black.w3-hide.w3-hide-large.w3-hide-medium.w3-top(style='margin-top:46px')
+  a.w3-bar-item.w3-button.w3-padding-large(href='#about', onclick='myFunction()') ABOUT
+  a.w3-bar-item.w3-button.w3-padding-large(href='#projects', onclick='myFunction()') PROJECTS
+  a.w3-bar-item.w3-button.w3-padding-large(href='#contact', onclick='myFunction()') CONTACT
+// Page content
+.w3-content(style='max-width:2000px;margin-top:46px')
+  // Automatic Slideshow Images
+  .mySlides.w3-display-container.w3-center
+    img(src='/images/spray_paint.jpg', style='width:100%')
+    .w3-display-bottommiddle.w3-container.w3-text-white.w3-padding-32.w3-hide-small
+      h3 Andrew Gray - Software Developer
+      p
+        b Boca Raton, Florida
+      br
+      br
+
+  // Mission Statement
+  #about.w3-container.w3-content.w3-center.w3-padding-64(style='max-width:800px')
+    h2.w3-wide THE MISSION
+    p.w3-justify
+      | The mission of this web application is to show off my technical prowess. This site is built by using node js and express and the goal will be to do some interesting stuff of the backend like modify a database or make an API call.
+      | I also would like to make this site interact with micro-controllers like the Rassberry pi as a proof of concept type project. Currently I work as a PHP developer in sunny South Florida.
+    .w3-row.w3-padding-32
+      .w3-third
+        p Pi Stuff
+        img.w3-round.w3-margin-bottom(src='/images/rasp_pi.png', alt='Lets Eat!', style='width:60%')
+      .w3-third
+        p GitHub
+        a(href='https://github.com/FerengiDrew')
+          img.w3-round.w3-margin-bottom(href="https://github.com/FerengiDrew", src='/images/github.jpg', alt='Random Name', style='width:60%')
+      .w3-third
+        p Stack-O
+        a(href='https://stackoverflow.com/users/12879737/manonmars')
+          img.w3-round(src='/images/stackoverflow.svg', alt='Random Name', style='width:60%')
+  // The Tour Section
+  #projects.w3-black
+    .w3-container.w3-content.w3-padding-64(style='max-width:800px')
+      h2.w3-wide.w3-center CAT FACTS API CONSUMPTION
+      p.w3-opacity.w3-center
+        i Cat Facts has an open API for developers to use!
+        a
+      br
+      center
+        img.w3-round.w3-margin-bottom(src='/images/cat-fact1.jpg', alt='Random Name', style='width:60%')
+
+      button(onclick='fetchRandomCatFact()') Click For Cat Fact
+
+      p#demo
+  // Ticket Modal
+  #ticketModal.w3-modal
+    .w3-modal-content.w3-animate-top.w3-card-4
+      header.w3-container.w3-teal.w3-center.w3-padding-32
+        span.w3-button.w3-teal.w3-xlarge.w3-display-topright(onclick="document.getElementById('ticketModal').style.display='none'") &times;
+        h2.w3-wide
+          i.fa.fa-suitcase.w3-margin-right
+          | Tickets
+      .w3-container
+        p
+          label
+            i.fa.fa-shopping-cart
+            |  Tickets, $15 per person
+        input.w3-input.w3-border(type='text', placeholder='How many?')
+        p
+          label
+            i.fa.fa-user
+            |  Send To
+        input.w3-input.w3-border(type='text', placeholder='Enter email')
+        button.w3-button.w3-block.w3-teal.w3-padding-16.w3-section.w3-right
+          | PAY
+          i.fa.fa-check
+        button.w3-button.w3-red.w3-section(onclick="document.getElementById('ticketModal').style.display='none'")
+          | Close
+          i.fa.fa-remove
+        p.w3-right
+          | Need
+          a.w3-text-blue(href='#') help?
+  // The Contact Section
+  #contact.w3-container.w3-content.w3-padding-64(style='max-width:800px')
+    h2.w3-wide.w3-center CONTACT
+    p.w3-opacity.w3-center
+      i Fan? Drop a note!
+    .w3-row.w3-padding-32
+      .w3-col.m6.w3-large.w3-margin-bottom
+        i.fa.fa-map-marker(style='width:30px')
+        |  Boca Raton, FL
+        br
+        i.fa.fa-phone(style='width:30px')
+        |  Phone: +1 512 983 4202
+        br
+        i.fa.fa-envelope(style='width:30px')
+        |  Email: andrewemersongray@gmail.com
+        br
+      .w3-col.m6
+        form(action='/action_page.php', target='_blank')
+          .w3-row-padding(style='margin:0 -16px 8px -16px')
+            .w3-half
+              input.w3-input.w3-border(type='text', placeholder='Name', required='', name='Name')
+            .w3-half
+              input.w3-input.w3-border(type='text', placeholder='Email', required='', name='Email')
+          input.w3-input.w3-border(type='text', placeholder='Message', required='', name='Message')
+          button.w3-button.w3-black.w3-section.w3-right(type='submit') SEND
+  // End Page Content
+// Image of location/map
+img.w3-image.w3-greyscale-min(src='/w3images/map.jpg', style='width:100%')
+// Footer
+footer.w3-container.w3-padding-64.w3-center.w3-opacity.w3-light-grey.w3-xlarge
+  a(href='https://twitter.com/AndrewG31440765')
+    i.fa.fa-twitter.w3-hover-opacity
+  a(href='https://www.linkedin.com/in/andrew-gray-0a3066124/')
+    i.fa.fa-linkedin.w3-hover-opacity
+  p.w3-medium
+    | Powered by Magic
+script.
+  // Automatic Slideshow - change image every 4 seconds
+  var myIndex = 0;
+  carousel();
+  function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+  x[i].style.display = "none";
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}
+  x[myIndex-1].style.display = "block";
+  setTimeout(carousel, 4000);
+  }
+  // Used to toggle the menu on small screens when clicking on the menu button
+  function myFunction() {
+  var x = document.getElementById("navDemo");
+  if (x.className.indexOf("w3-show") == -1) {
+  x.className += " w3-show";
+  } else {
+  x.className = x.className.replace(" w3-show", "");
+  }
+  }
+  // When the user clicks anywhere outside of the modal, close it
+  var modal = document.getElementById('ticketModal');
+  window.onclick = function(event) {
+  if (event.target == modal) {
+  modal.style.display = "none";
+  }
+  }
+
+script.
+  function fetchRandomCatFact() {
+    var apiUrl = 'https://cat-fact.herokuapp.com/facts/random';
+    var proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+    fetch(proxyUrl + apiUrl).then(response => {
+        return response.json();
+    }).then(data => {
+        var fact = data.text;
+        console.log(fact);
+        document.getElementById("demo").innerHTML = fact;
+    }).catch(err => {
+        // Do something for an error here
+    });
+  }
