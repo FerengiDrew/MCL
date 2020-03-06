@@ -100,7 +100,7 @@ style.
   #contact.w3-container.w3-content.w3-padding-64(style='max-width:800px')
     h2.w3-wide.w3-center CONTACT
     p.w3-opacity.w3-center
-      i Fan? Drop a note!
+      i Leave a comment!
     .w3-row.w3-padding-32
       .w3-col.m6.w3-large.w3-margin-bottom
         i.fa.fa-map-marker(style='width:30px')
@@ -122,8 +122,7 @@ style.
           input.w3-input.w3-border(type='text', placeholder='Message', required='', name='Message')
           button.w3-button.w3-black.w3-section.w3-right(type='submit') SEND
   // End Page Content
-// Image of location/map
-img.w3-image.w3-greyscale-min(src='/w3images/map.jpg', style='width:100%')
+
 // Footer
 footer.w3-container.w3-padding-64.w3-center.w3-opacity.w3-light-grey.w3-xlarge
   a(href='https://twitter.com/AndrewG31440765')
@@ -133,20 +132,6 @@ footer.w3-container.w3-padding-64.w3-center.w3-opacity.w3-light-grey.w3-xlarge
   p.w3-medium
     | Powered by Magic
 script.
-  // Automatic Slideshow - change image every 4 seconds
-  var myIndex = 0;
-  carousel();
-  function carousel() {
-  var i;
-  var x = document.getElementsByClassName("mySlides");
-  for (i = 0; i < x.length; i++) {
-  x[i].style.display = "none";
-  }
-  myIndex++;
-  if (myIndex > x.length) {myIndex = 1}
-  x[myIndex-1].style.display = "block";
-  setTimeout(carousel, 4000);
-  }
   // Used to toggle the menu on small screens when clicking on the menu button
   function myFunction() {
   var x = document.getElementById("navDemo");
